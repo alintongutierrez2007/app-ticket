@@ -5,7 +5,7 @@ const router=express.Router();
 import mongoose from 'mongoose';
 
 
-import TipoTrabajos from '../models/TipoTrabajos';
+import TipoTrabajos from '../models/Tipotrabajos';
 import { verificarAuth } from '../middlewares/autenticacion';
 
 //ruta para agregar estado desde post

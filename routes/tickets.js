@@ -140,6 +140,7 @@ try {
     res.json(TicketDB);
 
 } catch (error) {
+    console.log(error);
      return res.status(400).json({
         mensaje:'error ocurrido', error
     })
