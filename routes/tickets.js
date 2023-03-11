@@ -35,7 +35,7 @@ router.get('/tickets-abiertos',verificarAuth, async(req, res)=>{
 
 
 try {
-    const TicketDB=await Ticket.find({"activo":1, "status":0})
+    const TicketDB=await Ticket.find({"activo":1, "status":{$in:[0,2]}})
     .populate('id_tipo_vehiculo')
     .populate('id_tipo_equipo')
     .populate('id_tipo_ticket')
@@ -102,7 +102,7 @@ router.post('/tickets-fechas-all', verificarAuth, async(req, res)=>{
   
     try{
            const TicketDB=await Ticket.find({
-               "status":{$ne:0},  //diferente a 0 -> solo devuelve ya solucionadas y canceladas por el usuario
+               "status":1,  //status 1-> solo devuelve ya solucionadas
                "activo":1,
                "fecha_reportado":{$gte:new Date(desde),$lte:new Date(hasta)} })
                 .populate('id_tipo_vehiculo')

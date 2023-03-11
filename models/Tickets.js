@@ -34,7 +34,7 @@ const ticketsSchema=new Schema({
         comentario_atc:{type:String}, //comentario de cindy
         comentario_tecnico:{type:String}, //comentario de tecnicos
 
-        status:{type:Number, default:0}, //0 -> pendiente , 1 -> solucionado, 2-> vehiculo no disponible, cerrado 
+        status:{type:Number, default:0}, //0 -> pendiente , 1 -> solucionado, 2-> pendiente vehiculo no disponible
         horas_espera_ticket:{type:Number},
         cumple_sla:{type:Number, default:1}, // 1-> si cumple     0-> no cumple
 
