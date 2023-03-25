@@ -1,9 +1,6 @@
 import mongoose from 'mongoose';
 const Schema= mongoose.Schema;
 
-import autoIncrement from 'mongoose-auto-increment';
-
-autoIncrement.initialize(mongoose.connection);
 
 const ticketsSchema=new Schema({
 
@@ -50,12 +47,7 @@ const ticketsSchema=new Schema({
 
 });
 
-ticketsSchema.plugin(autoIncrement.plugin, {
-        model: 'tickets',
-        field: 'numero_ticket',
-        startAt: 100,
-        incrementBy: 1
-    });
+
 
 const Ticket= mongoose.model('tickets',ticketsSchema);
 export default Ticket;
